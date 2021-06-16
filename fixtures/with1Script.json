@@ -4,8 +4,7 @@
   "description": "Adds scripts to package.json from the command line. Just that.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha .",
-    "test:watch": "npm t -- -R min -w"
+    "test": "mocha ."
   },
   "keywords": [
     "script",

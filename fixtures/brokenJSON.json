@@ -1,20 +1,13 @@
-{
+
   "name": "scradd",
   "version": "1.0.0",
   "description": "Adds scripts to package.json from the command line. Just that.",
-  "main": "index.js",
-  "scripts": {
-    "test": "mocha .",
-    "test:watch": "npm t -- -R min -w"
-  },
+  "main": "index.js"
   "keywords": [
     "script",
     "command line",
     "package.json"
   ],
   "author": "Marcus Hammarberg",
-  "license": "MIT",
-  "devDependencies": {
-    "mocha": "^9.0.0"
-  }
+  "license": "MIT"
 }
