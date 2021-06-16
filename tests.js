@@ -34,11 +34,6 @@ describe('Scradd', () => {
 
   before(() => makeTestRunDir());
   after(() => fs.rmSync(TESTRUN_DIR, { recursive: true }));
-  // afterEach(() => {
-  //   if (fs.existsSync(TESTFILE_PATH)) {
-  //     fs.unlinkSync(TESTFILE_PATH);
-  //   }
-  // });
 
   describe('works with correctly formatted package.json', () => {
     it('adds a script to scripts node', () => {
