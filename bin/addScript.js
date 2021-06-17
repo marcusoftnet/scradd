@@ -17,12 +17,9 @@ if (process.argv.length !== 5) {
 }
 
 const packageFilePath =
-  process.argv[2] !== '.' ? process.argv[2] : './package.json';
+  process.argv[2] !== '.' ? process.argv[2] : 'package.json';
 const scriptName = process.argv[3];
 const scriptContent = process.argv[4];
-
-console.log(`${HEADER}
-   - will add '${scriptName}' to '${packageFilePath}'`);
 
 try {
   adder.addScript(packageFilePath, scriptName, scriptContent);
@@ -31,5 +28,6 @@ try {
   process.exit(1);
 }
 
-console.log(`   - '${scriptName}' added`);
+console.log(`${HEADER}
+   Added '${scriptName}' script to '${packageFilePath}'`);
 process.exit(0);
