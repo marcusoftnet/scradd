@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "mocha .",
-    "test:watch": "npm t -- -R min -w"
+    "test:watch": "npm t -- -R min -w",
+    "test:watcher": "mocha . -- -w -R min"
   },
   "keywords": [
     "script",

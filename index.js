@@ -46,7 +46,6 @@ const addScript = (path, name, script) => {
   packageJson.scripts[name] = removeQuotes(script);
 
   writeFile(path, packageJson);
-  console.log(`Script '${name}' added to '${path}'`);
 };
 
 module.exports = {
