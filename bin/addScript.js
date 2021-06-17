@@ -17,7 +17,7 @@ if (process.argv.length !== 5) {
 }
 
 const packageFilePath =
-  process.argv[2] !== '.' ? process.argv[2] : 'package.json';
+  process.argv[2] !== '.' ? process.argv[2] : './package.json';
 const scriptName = process.argv[3];
 const scriptContent = process.argv[4];
 
