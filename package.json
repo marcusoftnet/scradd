@@ -1,6 +1,6 @@
 {
   "name": "scradd",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Adds scripts to package.json from the command line. Just that.",
   "main": "index.js",
   "bin": {
@@ -22,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-      "url": "https://github.com/marcusoftnet/scradd"
+    "url": "https://github.com/marcusoftnet/scradd"
   },
   "homepage": "https://github.com/marcusoftnet/scradd#readme"
 }

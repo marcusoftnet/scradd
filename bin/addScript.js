@@ -2,7 +2,7 @@
 const adder = require('../index');
 const path = require('path');
 
-const HEADER = 'ScrAdd - Script Adder';
+const HEADER = `ScrAdd - Script Adder`;
 const USAGE = `${HEADER}
 Adds script to a package.json file.
 
@@ -24,12 +24,12 @@ const scriptName = process.argv[3];
 const scriptContent = process.argv[4];
 
 try {
-  adder.addScript(packageFilePath, scriptName, scriptContent);
+  adder.addScript(fullPath, scriptName, scriptContent);
 } catch (error) {
   console.log(error.message);
   process.exit(1);
 }
 
 console.log(`${HEADER}
-   Added '${scriptName}' script to '${packageFilePath}'`);
+   Added '${scriptName}' script to '${fullPath}'`);
 process.exit(0);
