@@ -1,6 +1,6 @@
 # ScrAdd - Script Adder
 
-Adds script to a package.json file from the terminal and in scripts.
+Adds script to a package.json file from the terminal or in scripts.
 
 I've often seen the need to programatically be able to add a script or two to a `package.json`, for example when writing instructions for a tutorial or lesson. With ScrAdd this is now just a `npx` command away.
 
@@ -34,6 +34,12 @@ npx scradd {path to package.json} {script name} {script content}'
 
 * Adding script content just about always requires quotes, since it contains spaces:
 
-```bash
+  ```bash
   npx scradd . "test:watch" "npm t -- -R min -w ./src/"
   ```
+
+## Contribute
+
+This is a quick and dirty first version of the code. I wanted it to be workable but not perfect.
+
+You can contribute to this package by forking the repository and clone it to your computer. Remember to add tests.
