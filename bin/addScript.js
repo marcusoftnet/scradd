@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 const adder = require('../index');
 
-const HEADER = 'SCRADD - Script Adder';
+const HEADER = 'ScrAdd - Script Adder';
 const USAGE = `${HEADER}
 Adds script to a package.json file.
 
