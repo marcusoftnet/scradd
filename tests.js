@@ -52,6 +52,18 @@ describe('Scradd', () => {
       assert.strictEqual(getNumberOfScripts(fileName), 4);
     });
 
+    it.only('overwrites existing scripts if overwrite', () => {
+      const fileName = createTestFileName(21);
+
+      makeTestFile('./fixtures/outOfTheBox.json', fileName);
+      assert.strictEqual(getNumberOfScripts(fileName), 1);
+      assertScript(fileName, 'test', 'echo \"Error: no test specified\" && exit 1');
+
+      sut.addScript(fileName, 'test', 'mocha . -R min', true);
+      assert.strictEqual(getNumberOfScripts(fileName), 1);
+      assertScript(fileName, 'test', 'mocha . -R min');
+    });
+
     it('adds a scripts node if none is present', () => {
       const fileName = createTestFileName(3);
 
@@ -111,12 +123,12 @@ describe('Scradd', () => {
         sut.addScript(fileName, 'apaa', 'apa');
       }, Error(`File '${fileName}' cannot be parsed as JSON`));
     });
-    it('script already present', () => {
+    it('script already present - no overwrite', () => {
       const fileName = createTestFileName(6);
       assert.throws(() => {
         makeTestFile('./fixtures/with1Script.json', fileName);
 
-        sut.addScript(fileName, 'test', 'apa');
+        sut.addScript(fileName, 'test', 'apa', false);
       }, Error(`'${fileName}' already has a 'test'-script`));
     });
   });

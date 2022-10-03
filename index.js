@@ -28,7 +28,7 @@ const getJson = (path) => {
   return json;
 };
 
-const addScript = (path, name, script) => {
+const addScript = (path, name, script, overwrite) => {
   if (!name) throw new Error('Missing script name');
   if (!script) throw new Error('Missing script content');
 
@@ -39,10 +39,12 @@ const addScript = (path, name, script) => {
 
   // run this check and adding in own method
   // return new script node
-  if (packageJson.scripts.hasOwnProperty(name)) {
+  if (!overwrite && packageJson.scripts.hasOwnProperty(name)) {
     throw new Error(`'${path}' already has a '${name}'-script`);
     return;
   }
+
+  // add or replace existing script
   packageJson.scripts[name] = removeQuotes(script);
 
   writeFile(path, packageJson);
@@ -52,4 +54,3 @@ module.exports = {
   addScript,
 };
 
-// addScript('./fixtures/with1Script.json', 'test', 'afafa');
