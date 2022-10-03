@@ -1,6 +1,6 @@
 {
   "name": "scradd",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "Adds scripts to package.json from the command line. Just that.",
   "main": "index.js",
   "bin": {
